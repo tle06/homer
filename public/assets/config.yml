@@ -9,7 +9,7 @@ logo: "https://raw.githubusercontent.com/bastienwirtz/homer/master/public/logo.p
 header: true # Set to false to hide the header
 footer: false # set false if you want to hide it.
 
-columns: 3 # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+columns: 4 # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
 connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
 
 # Optional theming

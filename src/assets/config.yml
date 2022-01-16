@@ -1,0 +1,149 @@
+# https://github.com/bastienwirtz/homer/blob/main/src/assets/defaults.yml
+
+title: "TLNK console"
+subtitle: ""
+logo: "https://raw.githubusercontent.com/bastienwirtz/homer/master/public/logo.png"
+# Alternatively a fa icon can be provided:
+# icon: "fas fa-skull-crossbones"
+
+header: true # Set to false to hide the header
+footer: false # set false if you want to hide it.
+
+columns: 3 # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
+
+# Optional theming
+theme: default # 'default' or one of the theme available in 'src/assets/themes'.
+
+# Here is the exaustive list of customization parameters
+# However all value are optional and will fallback to default if not set.
+# if you want to change only some of the colors, feel free to remove all unused key.
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#424242"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link-hover: "#363636"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link-hover: "#ffdd57"
+
+# Optional message
+message:
+  # url: "https://<my-api-endpoint>" # Can fetch information from an endpoint to override value below.
+  # style: "is-warning"
+  # title: "Optional message!"
+  # content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links: []
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Internal Application"
+    icon: "fas fa-cloud"
+    items:
+      - name: "phpmyadmin"
+        #logo: "https://devblogs.microsoft.com/wp-content/uploads/sites/43/2019/03/Azure-SQL-Database-generic_COLOR.png"
+        icon: "fas fa-database"
+        subtitle: ""
+        tag: "app"
+        url: "https://phpmyadmin-prod.herokuapp.com/"
+        target: "_blank" # optional html tag target attribute
+      - name: "Argocd"
+        #logo: "https://argoproj.github.io/argo-cd/assets/logo.png"
+        icon: "fas fa-sitemap"
+        subtitle: ""
+        tag: "app"
+        url: "https://argocd.tlnk.fr/"
+        target: "_blank"
+      - name: "Inventory"
+        #logo: "https://snipeitapp.com/img/logos/snipe-it-logo-xs.png"
+        icon: "fas fa-boxes"
+        subtitle: ""
+        tag: "app"
+        url: "https://snipeit-prod.herokuapp.com/"
+        target: "_blank"
+      - name: "blog"
+        #logo: "https://cdn0.iconfinder.com/data/icons/social-networks-and-media-flat-icons/136/Social_Media_Socialmedia_network_share_socialnetwork_network-22-512.png"
+        icon: "fab fa-blogger-b"
+        subtitle: ""
+        tag: "app"
+        url: "https://www.tlnk.fr/blog"
+        target: "_blank"
+      - name: "www.tlnk.fr"
+        #logo: "https://lh3.googleusercontent.com/proxy/qHfGO1jji5mBFNIQkNkI9jXhK-oRnM-8xLNSSuU8CextH6Mm6TmzOPjB8VaCjB_FzqiqiqmLylX2xpFM-VskI4w"
+        icon: "fas fa-home"
+        subtitle: ""
+        tag: "app"
+        url: "https://www.tlnk.fr/"
+        target: "_blank"
+      - name: "mikazza.io"
+        icon: "fas fa-building"
+        subtitle: ""
+        tag: "app"
+        url: "https://mikazza.io/"
+        target: "_blank"
+  - name: "External Application"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Azure"
+        #logo: "https://dzone.com/storage/temp/12165862-azurelogo-1.png"
+        icon: "fab fa-microsoft"
+        subtitle: ""
+        tag: "link"
+        url: "https://portal.azure.com"
+        target: "_blank"
+      - name: "Gitlab"
+        #logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/GitLab_Logo.svg/831px-GitLab_Logo.svg.png"
+        icon: "fab fa-gitlab"
+        subtitle: ""
+        tag: "link"
+        url: "https://gitlab.com/tle06/infrastructure"
+        target: "_blank"
+      - name: "Scaleway"
+        #logo: "https://avatars1.githubusercontent.com/u/5185491?s=400&v=4"
+        icon: "fas fa-server"
+        subtitle: ""
+        tag: "link"
+        url: "https://console.scaleway.com/"
+        target: "_blank"
+      - name: "Hetzner"
+        #logo: "https://www.hetzner.com/assets/Uploads/hetzner-logo-thumb.png"
+        icon: "fas fa-server"
+        subtitle: ""
+        tag: "link"
+        url: "https://accounts.hetzner.com/login"
+        target: "_blank"
+      - name: "AWS"
+        #logo: "https://lh3.googleusercontent.com/proxy/svfuS-2DefRFFiZnaYTtB-nn1FlmWeuqjdqC_p50_Jt9vrzq1uFYQik6puIFAJmD8T5n6WE1IjgSrTOGZkyz1WSB32tYnQi700Dwo8iqyqpTRPJquamYbG63M7CtUByA"
+        icon: "fab fa-aws"
+        subtitle: ""
+        tag: "link"
+        url: "https://aws.amazon.com/console/"
+        target: "_blank"
+      - name: "OVH"
+        icon: "fas fa-cloud"
+        subtitle: ""
+        tag: "link"
+        url: "https://www.ovh.com/manager"
+        target: "_blank"

@@ -56,7 +56,7 @@
 - Search
 - Grouping
 - Theme customization
-- Offline heath check
+- Offline health check
 - keyboard shortcuts:
   - `/` Start searching.
   - `Escape` Stop searching.
@@ -65,13 +65,11 @@
 
 ## Getting started
 
-Homer is a full static html/js dashboard, generated from the source in `/src` using webpack. It's meant to be served by an HTTP server, **it will not work if you open dist/index.html directly over file:// protocol**.
+Homer is a full static html/js dashboard, based on a simple yaml configuration file. See [documentation](docs/configuration.md) for information about the configuration (`assets/config.yml`) options.
 
-See [documentation](docs/configuration.md) for information about the configuration (`assets/config.yml`) options.
+It's meant to be served by an HTTP server, **it will not work if you open the index.html directly over file:// protocol**.
 
 ### Using docker
-
-To launch container:
 
 ```sh
 docker run -d \
@@ -81,33 +79,25 @@ docker run -d \
   b4bz/homer:latest
 ```
 
-Default assets will be automatically installed in the `/www/assets` directory. Use `UID` and/or `GID` env var to change the assets owner (`docker run -e "UID=1000" -e "GID=1000" [...]`).
+The container will run using a user uid and gid 1000. Add `--user <your-UID>:<your-GID>` to the docker command to adjust it. Make sure this match the ownership of your assets directory.
 
-### Using docker-compose
+**Environment variables:** 
 
-The `docker-compose.yml` file must be edited to match your needs.
-Set the port and volume (equivalent to `-p` and `-v` arguments):
+* **`INIT_ASSETS`** (default: `1`)
+Install example configuration file & assets (favicons, ...) to help you get started.
 
-```yaml
-volumes:
-  - /your/local/assets/:/www/assets
-ports:
-  - 8080:8080
-```
+* **`SUBFOLDER`** (default: `null`)
+If you would like to host Homer in a subfolder, (ex: *http://my-domain/**homer***), set this to the subfolder path (ex `/homer`).
 
-To launch container:
+#### With docker-compose
+
+A [`docker-compose.yml`](docker-compose.yml) file is available as an example. It must be edited to match your needs. You probably want to adjust the port mapping and volume binding (equivalent to `-p` and `-v` arguments).
+
+Then launch the container:
 
 ```sh
-cd /path/to/docker-compose.yml
+cd /path/to/docker-compose.yml/
 docker-compose up -d
-```
-
-Default assets will be automatically installed in the `/www/assets` directory. Use `UID` and/or `GID` env var to change the assets owner, also in `docker-compose.yml`:
-
-```yaml
-environment:
-  - UID=1000
-  - GID=1000
 ```
 
 ### Using the release tarball (prebuilt, ready to use)
